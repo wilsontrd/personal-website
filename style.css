@@ -1,0 +1,58 @@
+:root{
+	--bg:#0f1724;
+	--card:#0b1117;
+	--accent:#6ee7b7;
+	--muted:#9aa4b2;
+	--glass:rgba(255,255,255,0.04);
+	--radius:14px;
+	--max-width:720px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	background:linear-gradient(180deg, #071024 0%, #0c1524 100%);
+	color:#e6eef6;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	padding:32px;
+}
+.wrap{width:100%;max-width:var(--max-width);}
+.card{
+	background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+	border-radius:var(--radius);
+	padding:40px;
+	box-shadow:0 8px 30px rgba(2,6,23,0.6);
+	border:1px solid var(--glass);
+	text-align:center;
+}
+.logo{font-weight:700;color:var(--accent);letter-spacing:0.6px}
+.title{font-size:clamp(22px,4vw,40px);margin:18px 0 8px}
+.lead{color:var(--muted);margin:0 0 20px}
+.subscribe{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap}
+.subscribe input{
+	background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px 14px;border-radius:10px;
+	color:inherit;min-width:220px;outline:none;transition:box-shadow .15s,border-color .15s
+}
+.subscribe input:focus{box-shadow:0 4px 18px rgba(110,231,183,0.08);border-color:rgba(110,231,183,0.22)}
+.subscribe button{
+	background:linear-gradient(90deg,var(--accent),#4fd0a5);border:0;padding:12px 16px;border-radius:10px;color:#052017;font-weight:600;cursor:pointer
+}
+.meta{margin-top:20px}
+.hint{color:var(--muted);margin:0 0 8px}
+.links a{color:var(--muted);margin:0 8px;text-decoration:none;font-weight:600}
+.links a:hover{color:var(--accent)}
+.foot{display:block;margin-top:24px;color:rgba(230,238,246,0.45)}
+
+@media (max-width:480px){
+	.card{padding:24px}
+	.subscribe input{min-width:160px}
+}
+
+/* subtle entrance */
+.card{transform:translateY(6px);opacity:0;animation:pop .45s ease-out .05s forwards}
+@keyframes pop{to{transform:none;opacity:1}}

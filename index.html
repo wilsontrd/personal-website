@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Coming Soon</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="wrap">
+		<div class="card">
+			<h1 class="title">Wilson</h1>
+			<p class="lead">Site coming soon.</p>
+
+			<form class="subscribe" onsubmit="event.preventDefault(); handleSubscribe();">
+				<input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">
+				<button type="submit">Notify me</button>
+			</form>
+
+			<div class="meta">
+				<p class="hint">Go follow here:</p>
+				<div class="links">
+					<a href="https://t.co/hsgcsj8D4W" aria-label="Youtube">Youtube</a>
+                    <a href="https://x.com/wilson_STW" aria-label="Twitter">Twitter</a>
+				</div>
+			</div>
+
+			<small class="foot">© <span id="year"></span> wlsn.</small>
+		</div>
+	</main>
+
+	<script>
+		document.getElementById('year').textContent = new Date().getFullYear();
+		function handleSubscribe(){
+			const input = document.querySelector('.subscribe input');
+			if (!input.checkValidity()) return input.reportValidity();
+			input.value = '';
+			alert('Thanks — we\'ll notify you!');
+		}
+	</script>
+</body>
+</html>
